@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BackOfficeController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Controller::class, 'index']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => ['role:user']], function () {
+    Route::get('/user', [UserController::class, 'index']);
+});
+
+Route::group(['middleware' => ['role:admin']], function () {
+    Route::get('/backoffice', [BackOfficeController::class, 'index']);
+});
