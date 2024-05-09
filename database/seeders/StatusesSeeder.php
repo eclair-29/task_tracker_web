@@ -16,11 +16,11 @@ class StatusesSeeder extends Seeder
     {
         $date = Carbon::now();
         $statuses = [
-            ['category_id' => getStatusCategoryByDescription('user')->id, 'description' => 'active',  'created_at' => $date, 'updated_at' => $date],
-            ['category_id' => getStatusCategoryByDescription('user')->id, 'description' => 'inactive',  'created_at' => $date, 'updated_at' => $date],
-            ['category_id' => getStatusCategoryByDescription('task')->id, 'description' => 'pending',  'created_at' => $date, 'updated_at' => $date],
-            ['category_id' => getStatusCategoryByDescription('task')->id, 'description' => 'in progress',  'created_at' => $date, 'updated_at' => $date],
-            ['category_id' => getStatusCategoryByDescription('task')->id, 'description' => 'done',  'created_at' => $date, 'updated_at' => $date],
+            ['category_id' => getStatusCategoryByDescription('user')->id, 'description' => 'Active',  'created_at' => $date, 'updated_at' => $date],
+            ['category_id' => getStatusCategoryByDescription('user')->id, 'description' => 'Inactive',  'created_at' => $date, 'updated_at' => $date],
+            ['category_id' => getStatusCategoryByDescription('task')->id, 'description' => 'Pending',  'created_at' => $date, 'updated_at' => $date],
+            ['category_id' => getStatusCategoryByDescription('task')->id, 'description' => 'In progress',  'created_at' => $date, 'updated_at' => $date],
+            ['category_id' => getStatusCategoryByDescription('task')->id, 'description' => 'Done',  'created_at' => $date, 'updated_at' => $date],
         ];
 
         foreach ($statuses as $status) {

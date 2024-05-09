@@ -26,7 +26,7 @@ class RolesAndPermissionSeeder extends Seeder
 
         // create roles and assign created permissions
         Role::create(['name' => 'admin'])
-            ->givePermissionTo(['create task', 'edit task', 'delete task', 'view all tasks', 'view tasks']);
+            ->givePermissionTo(['create task', 'edit task', 'delete task', 'view all tasks']);
 
         Role::create(['name' => 'user'])
             ->givePermissionTo(['edit task', 'view tasks', 'delete task']);
