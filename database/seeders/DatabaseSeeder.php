@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             RolesAndPermissionSeeder::class,
             UsersSeeder::class,
             PrioritiesSeeder::class,
+            TasksSeeder::class
         ]);
     }
 }
