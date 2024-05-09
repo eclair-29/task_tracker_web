@@ -18,8 +18,9 @@ class UsersSeeder extends Seeder
         $date = Carbon::now();
 
         $users = [
-            ['status_id' => getUserStatusByDescription('active')->id, 'name' => 'Admin', 'email' => 'root031@yopmail.com', 'username' => 'root', 'password' => Hash::make('12345678'), 'created_at' => $date, 'updated_at' => $date],
-            ['status_id' => getUserStatusByDescription('active')->id, 'name' => 'Miguel De Chavez', 'email' => 'user033@yopmail.com', 'username' => 'mdechavez', 'password' => Hash::make('12345678'), 'created_at' => $date, 'updated_at' => $date],
+            ['status_id' => getUserStatusByDescription('Active')->id, 'name' => 'Admin', 'email' => 'root031@yopmail.com', 'username' => 'root', 'password' => Hash::make('12345678'), 'created_at' => $date, 'updated_at' => $date],
+            ['status_id' => getUserStatusByDescription('Active')->id, 'name' => 'Miguel De Chavez', 'email' => 'mdechavez89@yopmail.com', 'username' => 'mdechavez', 'password' => Hash::make('12345678'), 'created_at' => $date, 'updated_at' => $date],
+            ['status_id' => getUserStatusByDescription('Active')->id, 'name' => 'Eve Park', 'email' => 'evepark12@yopmail.com', 'username' => 'evepark', 'password' => Hash::make('12345678'), 'created_at' => $date, 'updated_at' => $date],
         ];
 
         foreach ($users as $user) {
@@ -28,5 +29,6 @@ class UsersSeeder extends Seeder
 
         User::find(1)->assignRole('admin');
         User::find(2)->assignRole('user');
+        User::find(3)->assignRole('user');
     }
 }

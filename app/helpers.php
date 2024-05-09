@@ -20,6 +20,15 @@ function getUserStatusByDescription($description)
     return $status;
 }
 
+function getTaskStatusByDescription($description)
+{
+    $status = Status::where('category_id', getStatusCategoryByDescription('task')->id)
+        ->where('description', $description)
+        ->first();
+
+    return $status;
+}
+
 function getAllTasks()
 {
     $tasks = DB::table('tasks as t')
