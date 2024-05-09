@@ -23,6 +23,10 @@
     <script src="{{ asset('js/libraries/jquery.js') }}"></script>
     <script src="{{ asset('js/libraries/datatables.js') }}"></script>
     <script src="{{ asset('js/libraries/bootstrap.js') }}"></script> <!-- Bootstrap 5.3.3 JS -->
+
+    <script>
+        const BASE_URL = "{{ url('') }}"; // http://127.0.0.1:8000
+    </script>
 </head>
 
 <body>
@@ -44,7 +48,7 @@
                         <!-- if auth user is 'ADMIN' then show utility links (for now, the only utility is for adding new users) -->
                         @role('admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Add User</a>
+                            <a class="nav-link" href="{{ route('backoffice.utilities.users') }}">Manage Users</a>
                         </li>
                         @endrole
                     </ul>
@@ -88,5 +92,9 @@
         </main>
     </div>
 </body>
+<script src="{{ asset('js/functions.js') }}"></script>
+<script src="{{ asset('js/tasks.js') }}"></script>
+<script src="{{ asset('js/user.js') }}"></script>
+<script src="{{ asset('js/backoffice.js') }}"></script>
 
 </html>

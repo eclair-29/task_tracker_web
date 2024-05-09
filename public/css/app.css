@@ -47,7 +47,7 @@ table thead th,
 table tbody td,
 table tfoot th {
   font-weight: 400 !important;
-  border-right: none !important;
+  /* border-right: none !important; */
   border-color: #dee2e6 !important;
   vertical-align: middle;
   white-space: nowrap;
@@ -70,8 +70,16 @@ table tfoot th:last-child {
   border-right: 1px solid #dee2e6 !important;
 }
 
+table span {
+    font-size: 11px !important;
+}
+
 tfoot th {
     padding: 8px !important;
+}
+
+.dt-length select {
+    margin-right: 10px;
 }
 
 .table-responsive::-webkit-scrollbar {
@@ -106,4 +114,14 @@ tfoot th {
 
 .invalid-feedback {
     font-size: 11px !important;
+}
+
+.page-title {
+    font-size: 16px !important;
+    margin-bottom: 0;
+}
+
+#backoffice_tasks_table a,
+#backoffice_users_table a {
+    text-decoration: none;
 }
