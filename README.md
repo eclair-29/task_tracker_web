@@ -25,6 +25,14 @@
 
 > **Note**: For step 6, the `DB_DATABASE` schema must be present on your database before proceeding to the next steps.
 
+**Sample Login Credentails**
+
+| Username  | Password | Role  |
+| --------- | -------- | ----- |
+| root      | 12345678 | Admin |
+| mdechavez | 12345678 | User  |
+| evepark   | 12345678 | User  |
+
 Enjoy exploring the app! :)
 
 # Features
