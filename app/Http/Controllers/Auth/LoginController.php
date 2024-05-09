@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Status;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
@@ -49,6 +50,20 @@ class LoginController extends Controller
         $request->session()->regenerate();
 
         return redirect('/login');
+    }
+
+    protected function credentials(Request $request)
+    {
+        // only allow users that is active
+        $status = Status::where('category_id', getStatusCategoryByDescription('user')->id)
+            ->where('description', 'Active')
+            ->first();
+
+        return [
+            'username' => $request->username,
+            'password' => $request->password,
+            'status_id' => $status->id
+        ];
     }
 
     /**
